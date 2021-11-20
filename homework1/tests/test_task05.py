@@ -16,7 +16,6 @@ class TestFindMaximalSubarraySum(unittest.TestCase):
         result = find_maximal_subarray_sum(nums, k)
         self.assertEqual(result, 25)
 
-
     def test_set_3(self):
         """Testing with the set consisting of equal values"""
         nums = [9, 9, 9, 9]

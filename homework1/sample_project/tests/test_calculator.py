@@ -1,16 +1,20 @@
+import unittest
+
 from calculator.calc import check_power_of_2
+from parameterized import parameterized
 
 
-def test_positive_case():
-    """Testing that actual powers of 2 give True"""
-    assert check_power_of_2(65536) is True
+class TestCheckPowerOf2(unittest.TestCase):
+    test_data = [
+        (0, False),
+        (-1, False),
+        (-16, False),
+        (12, False),
+        (16, True),
+        (65536, True),
+        ("a", False),
+    ]
 
-
-def test_negative_case():
-    """Testing that non-powers of 2 give False"""
-    assert check_power_of_2(12) is False
-
-
-def test_non_integer():
-    """Testing that a non-integer as an input raises TypeError"""
-    assert check_power_of_2('a') == 'Введите число'
+    @parameterized.expand(test_data)
+    def test_check_power_of_2_func(self, test_input, expected):
+        self.assertEqual(check_power_of_2(test_input), expected)

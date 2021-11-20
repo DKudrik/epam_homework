@@ -28,6 +28,18 @@ class TestCheckFib(unittest.TestCase):
         call = check_fib([5, 8])
         self.assertEqual(call, False)
 
+    def test_wrong_tricky_seq(self):
+        """Testing with a sequence that seems to be a fibonacci sequence
+        because first item + second = third etc, but in fact it's not"""
+        call = check_fib([6, 4, 10, 14, 24])
+        self.assertEqual(call, False)
+
+    def test_wrong_tricky_seq_2(self):
+        """Testing with a sequence of negative numbers that seems to be
+        a fibonacci sequence """
+        call = check_fib([-1, -1, -2, -3])
+        self.assertEqual(call, False)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -6,22 +6,24 @@ Given a cell with "it's a fib sequence" from slideshow,
 We guarantee, that the given sequence contain >= 0 integers inside.
 
 """
+from math import sqrt
 from typing import Sequence
+
+
+def is_perfect_square(x):
+    s = int(sqrt(x))
+    return s * s == x
 
 
 def check_fib(data: Sequence[int]) -> bool:
     if len(data) < 3:
         return False
-    a = data[0]
-    b = data[1]
-    c = data[2]
-    while data[:-2]:
-        if not a + b == c:
+    result = []
+    for num in data:
+        if num < 0:
             return False
-        try:
-            a, b = b, c
-            data = data[1:]
-            c = data[2]
-        except IndexError:
-            continue
-    return True
+        result.append(
+            is_perfect_square(5 * num ** 2 + 4)
+            or is_perfect_square(5 * num ** 2 - 4)
+        )
+    return all(result)

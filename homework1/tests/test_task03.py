@@ -1,5 +1,6 @@
 import unittest
 from unittest.mock import mock_open, patch
+
 from hw.task03 import find_maximum_and_minimum
 
 
@@ -16,8 +17,7 @@ class TestFindMaxAndMin(unittest.TestCase):
         m_open = self.open_mock(data)
         with patch('builtins.open', m_open):
             call = find_maximum_and_minimum('file_name')
-        self.assertEqual(call[0], 1)
-        self.assertEqual(call[1], 1)
+        self.assertEqual(call, (1, 1))
 
     def test_set_1(self):
         """Testing with a min value at the start and the max at the end"""
@@ -25,8 +25,7 @@ class TestFindMaxAndMin(unittest.TestCase):
         m_open = self.open_mock(data)
         with patch('builtins.open', m_open):
             call = find_maximum_and_minimum('file_name')
-        self.assertEqual(call[0], -1)
-        self.assertEqual(call[1], 3)
+        self.assertEqual(call, (3, -1))
 
     def test_set_2(self):
         """Testing with a min value at the end and the max at the start"""
@@ -34,8 +33,7 @@ class TestFindMaxAndMin(unittest.TestCase):
         m_open = self.open_mock(data)
         with patch('builtins.open', m_open):
             call = find_maximum_and_minimum('file_name')
-        self.assertEqual(call[0], -33)
-        self.assertEqual(call[1], 6)
+        self.assertEqual(call, (6, -33))
 
     def test_set_3(self):
         """Testing with a min value followed with next min value"""
@@ -43,8 +41,7 @@ class TestFindMaxAndMin(unittest.TestCase):
         m_open = self.open_mock(data)
         with patch('builtins.open', m_open):
             call = find_maximum_and_minimum('file_name')
-        self.assertEqual(call[0], -4)
-        self.assertEqual(call[1], 2)
+        self.assertEqual(call, (2, -4))
 
     def test_set_4(self):
         """Testing with a max value followed with next max value"""
@@ -52,8 +49,7 @@ class TestFindMaxAndMin(unittest.TestCase):
         m_open = self.open_mock(data)
         with patch('builtins.open', m_open):
             call = find_maximum_and_minimum('file_name')
-        self.assertEqual(call[0], -1)
-        self.assertEqual(call[1], 6)
+        self.assertEqual(call, (6, -1))
 
 
 if __name__ == '__main__':
