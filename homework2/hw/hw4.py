@@ -18,14 +18,21 @@ val_2 = cache_func(*some)
 assert val_1 is val_2
 
 """
-from functools import lru_cache
+from collections import defaultdict
 from typing import Callable
 
 
-def multiply(a, b):
-    return (a ** b) ** 2
-
-
-@lru_cache()
 def cache_func(func: Callable) -> Callable:
-    return func
+    cache = defaultdict()
+    def wrapper(*args, **kwargs):
+        key = " ".join(str(i) for i in [func.__name__, str(args), str(kwargs)])
+        if key not in cache:
+            cache[key] = func(*args, **kwargs)
+        return cache[key]
+
+    return wrapper
+
+
+@cache_func
+def multiply(a: int, b: int) -> int:
+    return a * b

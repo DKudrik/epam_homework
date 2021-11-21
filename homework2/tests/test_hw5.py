@@ -7,8 +7,8 @@ from hw.hw5 import custom_range
 class TestCustomRange(unittest.TestCase):
     def test_set_1(self):
         data = [1, 2, 3, 4, 5]
-        result = custom_range(data, 2)
-        self.assertEqual(result, [2, 3, 4, 5])
+        result = custom_range(data, 3)
+        self.assertEqual(result, [1, 2])
 
     def test_set_2(self):
         data = string.ascii_lowercase

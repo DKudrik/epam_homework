@@ -17,10 +17,29 @@ assert = custom_range(string.ascii_lowercase, 'p', 'g', -2) == ['p', 'n', 'l', '
 from typing import AnyStr, List
 
 
-def custom_range(data, start=None, stop=None, step=None) -> List[str]:
-    start = 0 if start is None else start
-    stop = -1 if stop is None else stop
-    step = 1 if step is None else step
+def custom_range(data, *args) -> List[str]:
+    """
+    The first arg is an iterable object. In case the second arg is the last
+     one - it's supposed to be a start value, else: the second arg is a start
+     value, the third one is a stop value and the last one is a step.
+
+     ---Example---
+     custom_range(string.ascii_lowercase, 'f') == ['a', 'b', 'c', 'd', 'e']
+     custom_range(string.ascii_lowercase, 'g', 'k') == ['g', 'h', 'i', 'j']
+     custom_range(string.ascii_lowercase, 'p', 'h', -2) == ['p', 'n', 'l', 'j']
+    """
+    if len(args) == 1:
+        start = 0
+        stop = args[0]
+        step = 1
+    elif len(args) == 2:
+        start = args[0]
+        stop = args[1]
+        step = 1
+    elif len(args) == 3:
+        start = args[0]
+        stop = args[1]
+        step = args[2]
     if step < 1:
         data = data[::-1]
         step = abs(step)
