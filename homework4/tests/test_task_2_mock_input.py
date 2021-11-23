@@ -1,17 +1,18 @@
-from hw.task_2_mock_input import count_dots_on_i
+from unittest.mock import patch
 
 import pytest
 
-# import mock
-import responses
-import requests
-import requests_mock
+from hw.task_2_mock_input import count_dots_on_i
 
 
-def test_mock_input():
-    with requests_mock.mock() as m:
-        m.get("http://test.com", text="data")
-        # response = requests.get('http://example.com/api/123')
-        result = count_dots_on_i("http://test.com")
+def test_mock_input_with_5_i():
+    with patch("requests.get") as mock_request:
+        mock_request.return_value.text = "iiiii"
+        assert count_dots_on_i("qwe") == 5
 
-    assert 404 is result
+
+def test_mock_input_connection_error():
+    with patch("requests.get", side_effect=ConnectionError) as mock_request:
+        mock_request.return_value.text = "qwerty"
+        with pytest.raises(ConnectionError):
+            count_dots_on_i("https://example.com")

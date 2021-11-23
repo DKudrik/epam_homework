@@ -38,11 +38,5 @@ if __name__ == "__main__":
     doctest.testmod()
 
 
-res = fizzbuzz(15)
-print(res.__repr__())
-print(next(res))
-print(next(res))
-print(next(res))
-print(next(res))
-print(next(res))
-print(next(res))
+# при запуске доктеста почему-то результат в одиночных кавычках, хотя добавляю
+# в двойных. В задаче с доктестом такой проблемы не было, тесты проходят норм.

@@ -26,15 +26,18 @@ You will learn:
 
 * https://docs.python.org/3/library/urllib.request.html#urllib.request.urlopen
 """
-import urllib.request
+import requests
 
 
 def count_dots_on_i(url: str) -> int:
     try:
-        response_data = urllib.request.urlopen(url).read().decode("utf-8")
-        return response_data.count('i')
-    except ConnectionError:
-        raise ValueError(f"Unreachable {url}")
-    except urllib.error.URLError:
+        response_data = requests.get(url)
+        return response_data.text.count("i")
+    except requests.exceptions.ConnectionError:
         raise ValueError(f"Unreachable {url}")
 
+
+if __name__ == "__main__":
+    import doctest
+
+    doctest.testmod()

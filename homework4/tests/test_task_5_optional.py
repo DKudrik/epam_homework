@@ -30,5 +30,5 @@ test_data = [
 
 @pytest.mark.parametrize("input, output", test_data)
 def test_fizzbuzz(input, output):
-    result = fizzbuzz(input)
+    result = list(fizzbuzz(input))
     assert result == output
