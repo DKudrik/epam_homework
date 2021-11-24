@@ -81,11 +81,11 @@ class TestGetRarestChar(unittest.TestCase):
 
 class TestCountPunctuationChars(unittest.TestCase):
     def test_set_1(self):
-        data = '. ? ! , ; : - ( ) \" \' „ “'
+        data = '. ? ! , ; : - ( ) \" \''
         m_open = open_mock(data)
         with patch('builtins.open', m_open):
             result = count_punctuation_chars('file_name')
-        self.assertEqual(result, 13)
+        self.assertEqual(result, 11)
 
 
 class TestCountNonAsciiChars(unittest.TestCase):

@@ -17,10 +17,19 @@ Input: [2,2,1,1,1,2,2]
 Output: 2, 1
 
 """
+import operator
+from collections import Counter
 from typing import List, Tuple
 
 
 def major_and_minor_elem(inp: List) -> Tuple[int, int]:
-    min_value = min(inp)
-    max_value = max(inp)
-    return max_value, min_value
+    counted_chars = Counter(inp)
+    sorted_tuples = sorted(counted_chars.items(), key=operator.itemgetter(1))
+    sorted_result = {k: v for k, v in sorted_tuples}
+    listed_result = list(sorted_result.keys())
+    most_common = listed_result[-1]
+    if len(listed_result) > 1:
+        least_common = listed_result[0]
+    else:
+        least_common = None
+    return most_common, least_common
