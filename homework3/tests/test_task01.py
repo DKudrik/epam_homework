@@ -1,16 +1,44 @@
-import random
 import unittest
 
-from hw.task01.task01 import plus
+from hw.task01.task01 import cache
 
 
 class TestCache(unittest.TestCase):
-    def test_plus(self):
-        res_1, res_2, res_3, res_4 = (
-            plus(random.randint(1, 10), random.randint(1, 10)) for _ in range(4)
-        )
-        self.assertTrue(
-            res_1 is res_2 and res_2 is res_3 and res_3 is not res_4)
+    def test_cache_set_1(self):
+        @cache(times=2)
+        def foo() -> int:
+            return 1
+
+        foo()
+        foo()
+        foo()
+        foo()
+        self.assertEqual(foo.invocations, 2)
+
+    def test_cache_set_2(self):
+        @cache(times=3)
+        def foo() -> int:
+            return 1
+
+        foo()
+        foo()
+        foo()
+        foo()
+        self.assertEqual(foo.invocations, 1)
+
+    def test_cache_set_3(self):
+        @cache(times=2)
+        def foo() -> int:
+            return 1
+
+        foo()
+        foo()
+        foo()
+        foo()
+        foo()
+        foo()
+        foo()
+        self.assertEqual(foo.invocations, 3)
 
 
 if __name__ == "__main__":

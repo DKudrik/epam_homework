@@ -15,15 +15,14 @@ Write a function that detects if a number is Armstrong number in functionaly sty
  - do not use loops, preferably using list comprehensions
 
 ### Example function signature and call
+
+assert is_armstrong(153) is True, 'Is Armstrong number'
+assert is_armstrong(10) is False, 'Is not Armstrong number'
 """
 
 
 def is_armstrong(number: int) -> bool:
-    number_iter = list(map(lambda x: int(x), str(number)))
-    length = len(number_iter)
-    nums_pows = [num ** length for num in number_iter]
+    numbers = list(map(lambda x: int(x), str(number)))
+    length = len(numbers)
+    nums_pows = [num ** length for num in numbers]
     return sum(nums_pows) == number
-
-
-# assert is_armstrong(153) is True, 'Is Armstrong number'
-# assert is_armstrong(10) is False, 'Is not Armstrong number'
