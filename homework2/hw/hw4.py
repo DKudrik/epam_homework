@@ -28,8 +28,9 @@ def cache_func(func: Callable) -> Callable:
         key = " ".join(str(i) for i in [func.__name__, str(args), str(kwargs)])
         if key not in cache:
             cache[key] = func(*args, **kwargs)
+            wrapper.invocations += 1
         return cache[key]
-
+    wrapper.invocations = 0
     return wrapper
 
 
