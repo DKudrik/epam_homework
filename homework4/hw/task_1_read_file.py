@@ -41,11 +41,11 @@ def read_magic_number(path: str) -> bool:
         os.path.exists(path)
         with open(path, "r") as fi:
             line = fi.readline()
-        line = line.replace(" ", "")
+        line = line.strip()
         if line.isdigit():
             line = int(line)
             if 1 <= line < 3:
                 return True
         return False
-    except:
+    except FileNotFoundError:
         raise ValueError("Файл не найден")
