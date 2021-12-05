@@ -3,10 +3,7 @@ from hw.counter import instances_counter
 
 @instances_counter
 class User:
-    counter = 0
-
-    def __init__(self):
-        self.__class__.counter += 1
+    pass
 
 
 def test_instances_counter():

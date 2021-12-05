@@ -59,11 +59,11 @@ class DeadlineError(Exception):
 
 
 class HomeworkResult:
-    def __init__(self, homework_obj_author, homework_obj, solution: str):
-        if isinstance(homework_obj, Homework):
-            self.homework = homework_obj
+    def __init__(self, homework_author, homework, solution: str):
+        if isinstance(homework, Homework):
+            self.author = homework_author
+            self.homework = homework
             self.solution = solution
-            self.author = homework_obj_author
             self.created = dt.datetime.now()
         else:
             raise AttributeError("You gave a not Homework object")
@@ -101,14 +101,13 @@ class Student:
     def __str__(self):
         return f"Student {self.first_name} {self.last_name}"
 
-    def do_homework(self, homework_object, solution: str) -> HomeworkResult:
+    def do_homework(self, homework, solution: str) -> HomeworkResult:
         """
         Takes a homework object, a solution and checks if there is still
         enough time for homework. Returns HomeWork result object.
         """
-        result = HomeworkResult(self, homework_object, solution)
-        if homework_object.is_active():
-            return result
+        if homework.is_active():
+            return HomeworkResult(self, homework, solution)
         raise DeadlineError
 
 
@@ -123,10 +122,10 @@ class Teacher(Student):
         """Creates a Homework object."""
         return Homework(text=text, deadline=days)
 
-    def check_homework(self, homework_result_obj):
-        homework = homework_result_obj.homework
-        if len(homework_result_obj.solution) > 5:
-            self.__class__.homework_done[homework].add(homework_result_obj)
+    def check_homework(self, homework_result):
+        homework = homework_result.homework
+        if len(homework_result.solution) > 5:
+            self.homework_done[homework].add(homework_result)
             return True
         return False
 
@@ -136,34 +135,3 @@ class Teacher(Student):
             Teacher.homework_done.pop(homework_obj)
         else:
             Teacher.homework_done.clear()
-
-
-if __name__ == "__main__":
-    opp_teacher = Teacher("Daniil", "Shadrin")
-    advanced_python_teacher = Teacher("Aleksandr", "Smetanin")
-
-    lazy_student = Student("Roman", "Petrov")
-    good_student = Student("Lev", "Sokolov")
-
-    oop_hw = opp_teacher.create_homework("Learn OOP", 1)
-    docs_hw = opp_teacher.create_homework("Read docs", 5)
-
-    result_1 = good_student.do_homework(oop_hw, "I have done this hw")
-    result_2 = good_student.do_homework(docs_hw, "I have done this hw too")
-    result_3 = lazy_student.do_homework(docs_hw, "done")
-    try:
-        result_4 = HomeworkResult(good_student, "fff", "Solution")
-    except Exception:
-        print("There was an exception here")
-    opp_teacher.check_homework(result_1)
-    temp_1 = opp_teacher.homework_done
-
-    advanced_python_teacher.check_homework(result_1)
-    temp_2 = Teacher.homework_done
-    assert temp_1 == temp_2
-
-    opp_teacher.check_homework(result_2)
-    opp_teacher.check_homework(result_3)
-
-    print(Teacher.homework_done[oop_hw])
-    Teacher.reset_results()

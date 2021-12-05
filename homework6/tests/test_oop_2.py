@@ -1,13 +1,10 @@
 import unittest
 
-import pytest
-
 from hw.oop_2 import Homework, HomeworkResult, Student, Teacher
 
 
-def test_oop_2():
+def test_student_class():
     opp_teacher = Teacher("Daniil", "Shadrin")
-    advanced_python_teacher = Teacher("Aleksandr", "Smetanin")
 
     lazy_student = Student("Roman", "Petrov")
     good_student = Student("Lev", "Sokolov")
@@ -26,6 +23,21 @@ def test_oop_2():
         unittest.TestCase, expected_exception=AttributeError
     ):
         HomeworkResult(good_student, "fff", "Solution")
+
+
+def test_teacher_class():
+    opp_teacher = Teacher("Daniil", "Shadrin")
+    advanced_python_teacher = Teacher("Aleksandr", "Smetanin")
+
+    lazy_student = Student("Roman", "Petrov")
+    good_student = Student("Lev", "Sokolov")
+
+    oop_hw = opp_teacher.create_homework("Learn OOP", 1)
+    docs_hw = opp_teacher.create_homework("Read docs", 5)
+
+    result_1 = good_student.do_homework(oop_hw, "I have done this hw")
+    result_2 = good_student.do_homework(docs_hw, "I have done this hw too")
+    result_3 = lazy_student.do_homework(docs_hw, "done")
 
     assert opp_teacher.check_homework(result_1) is True
     temp_1 = opp_teacher.homework_done
