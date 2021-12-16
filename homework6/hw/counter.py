@@ -9,8 +9,6 @@ reset_instances_counter - сбросить счетчик экземпляров
 Ниже пример использования
 """
 
-from functools import wraps
-
 
 def instances_counter(cls):
     @classmethod
@@ -20,7 +18,6 @@ def instances_counter(cls):
 
     original_init = cls.__init__
 
-    @wraps(original_init)
     def new_init(self, *args, **kwargs):
         self.__class__.inits_counter()
         self.__class__.created_instances += 1
