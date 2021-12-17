@@ -11,6 +11,13 @@ reset_instances_counter - сбросить счетчик экземпляров
 
 
 def instances_counter(cls):
+    """
+    Applies to any class to get two methods: get_created_instances and
+    reset_instances_counter.
+
+    :param cls: class object
+    :return: cls
+    """
     @classmethod
     def inits_counter(cls):
         if "created_instances" not in cls.__dict__:
@@ -25,11 +32,18 @@ def instances_counter(cls):
 
     @classmethod
     def get_created_instances(cls):
+        """
+        Returns number of created instances of a class
+        """
         cls.inits_counter()
         return cls.created_instances
 
     @classmethod
     def reset_instances_counter(cls):
+        """
+        Returns number of created instances of a class and then
+        sets the value to zero
+        """
         cls.inits_counter()
         counter_to_return = cls.created_instances
         cls.created_instances = 0

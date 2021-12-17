@@ -59,6 +59,10 @@ class DeadlineError(Exception):
 
 
 class HomeworkResult:
+    """
+    HomeworkResult accepts an author, a homework task and a solution and raises
+    AttributeError in case not a Homework object was sent.
+    """
     def __init__(self, homework_author, homework, solution: str):
         if isinstance(homework, Homework):
             self.author = homework_author
@@ -88,7 +92,11 @@ class Homework:
         return f"Homework instance. Text: {self.text}"
 
     def is_active(self) -> bool:
-        """Homework object method - checks if the deadline is not over"""
+        """
+        Checks if the deadline is not over
+
+        :return: bool
+        """
         current_date = dt.datetime.now()
         return current_date < self.created + self.deadline
 
@@ -105,7 +113,14 @@ class Student:
         """
         Takes a homework object, a solution and checks if there is still
         enough time for homework. Returns HomeWork result object.
+
+        :param homework: Homework object
+        :type homework: Homework class instance
+        :param solution: text of a solution
+        :type solution: str
+        :return: HomeworkResult object
         """
+
         if homework.is_active():
             return HomeworkResult(self, homework, solution)
         raise DeadlineError
@@ -119,10 +134,22 @@ class Teacher(Student):
 
     @staticmethod
     def create_homework(text, days):
-        """Creates a Homework object."""
+        """
+        Creates a Homework object.
+
+        :param text: String with a homework task
+        :param days: Number of days for doing the task
+        :return: Homework object
+        """
         return Homework(text=text, deadline=days)
 
-    def check_homework(self, homework_result):
+    def check_homework(self, homework_result) -> bool:
+        """
+        Checks if a homework solution meets the requirements
+
+        :param homework_result: HomeworkResult object
+        :return: bool
+        """
         homework = homework_result.homework
         if len(homework_result.solution) > 5:
             self.homework_done[homework].add(homework_result)
@@ -130,8 +157,17 @@ class Teacher(Student):
         return False
 
     @staticmethod
-    def reset_results(homework_obj=None):
-        if homework_obj:
-            Teacher.homework_done.pop(homework_obj)
+    def reset_results(homework=None) -> None:
+        """
+        Removes the result of the defined homework from the storage and
+        returns it.
+        In case the homework in attributes is not defined - clears
+        the whole storage.
+
+        :param homework: Homework object
+        :return: None
+        """
+        if homework:
+            Teacher.homework_done.pop(homework)
         else:
             Teacher.homework_done.clear()
