@@ -14,7 +14,10 @@ def open_mock(data):
 
 @pytest.fixture()
 def test_data():
-    data = "name=kek \nlast_name=top \npower=9001 \nsong=shadilay"
+    data = (
+        "name=kek \nlast_name=top \npower=9001 \nsong=shadilay \n3=qwe "
+        "\n__doc__=document"
+    )
     m_open = open_mock(data)
     with patch("builtins.open", m_open):
         storage = KeyValueStorage("file_name")
@@ -25,3 +28,5 @@ def test_key_value_storage(test_data):
     assert test_data["name"] == "kek"
     assert test_data.song == "shadilay"
     assert isinstance(test_data.power, int) is True
+    assert 3 not in dir(KeyValueStorage)
+    assert KeyValueStorage.__doc__ != "document"
