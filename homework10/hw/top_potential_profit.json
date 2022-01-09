@@ -1,0 +1,82 @@
+[
+    {
+        "growth": 0.27,
+        "code": "MRK",
+        "name": "Merck Co.",
+        "price": 5965.695779999999,
+        "PE": 13.66,
+        "potential_profit": 496.60574412532645
+    },
+    {
+        "growth": 85.13,
+        "code": "MRNA",
+        "name": "Moderna Inc",
+        "price": 15888.215436,
+        "PE": -59.95,
+        "potential_profit": 345.9323706161988
+    },
+    {
+        "growth": -22.77,
+        "code": "DISCA",
+        "name": "Discovery Communications Inc  (A)",
+        "price": 2233.2355559999996,
+        "PE": 9.18,
+        "potential_profit": 260.7571560480148
+    },
+    {
+        "growth": -10.65,
+        "code": "VIAC",
+        "name": "ViacomCBS",
+        "price": 2629.2151139999996,
+        "PE": Infinity,
+        "potential_profit": 260.4453870625663
+    },
+    {
+        "growth": -47.75,
+        "code": "PENN",
+        "name": "Penn National Gaming Inc.",
+        "price": 3512.5541279999998,
+        "PE": -17.5,
+        "potential_profit": 227.26434662364602
+    },
+    {
+        "growth": -6.82,
+        "code": "DISCK",
+        "name": "Discovery Communications Inc  (C)",
+        "price": 2179.7448839999997,
+        "PE": 8.03,
+        "potential_profit": 219.59750838524195
+    },
+    {
+        "growth": 154.34,
+        "code": "DVN",
+        "name": "Devon Energy Corp.",
+        "price": 3632.1652139999997,
+        "PE": -167.13,
+        "potential_profit": 208.81440099317197
+    },
+    {
+        "growth": 118.83,
+        "code": "NVDA",
+        "name": "NVIDIA Corp.",
+        "price": 20242.504722,
+        "PE": 51.8,
+        "potential_profit": 199.43805654015733
+    },
+    {
+        "growth": 167.5,
+        "code": "F",
+        "name": "Ford Motor Co.",
+        "price": 1815.7111439999999,
+        "PE": 21.51,
+        "potential_profit": 182.87981859410428
+    },
+    {
+        "growth": 115.2,
+        "code": "NUE",
+        "name": "Nucor Corp.",
+        "price": 8502.045144,
+        "PE": 15.99,
+        "potential_profit": 168.69002920317064
+    }
+]

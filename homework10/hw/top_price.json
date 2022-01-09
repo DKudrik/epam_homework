@@ -1,0 +1,82 @@
+[
+    {
+        "growth": 43.99,
+        "code": "NVR",
+        "name": "NVR Inc.",
+        "price": 403466.76622799993,
+        "PE": 17.87,
+        "potential_profit": 53.87799227799227
+    },
+    {
+        "growth": 4.74,
+        "code": "AMZN",
+        "name": "Amazon",
+        "price": 241531.18600799996,
+        "PE": 79.54,
+        "potential_profit": 30.964248524817766
+    },
+    {
+        "growth": 59.94,
+        "code": "GOOGL",
+        "name": "Alphabet A (ex Google)",
+        "price": 203586.983484,
+        "PE": 30.0,
+        "potential_profit": 76.39261323471848
+    },
+    {
+        "growth": 58.65,
+        "code": "GOOG",
+        "name": "Alphabet C (ex Google)",
+        "price": 203568.410334,
+        "PE": 30.01,
+        "potential_profit": 76.3718741831489
+    },
+    {
+        "growth": 7.27,
+        "code": "BKNG",
+        "name": "Booking Holdings Inc Registered Shs",
+        "price": 180871.27810799997,
+        "PE": 460.92,
+        "potential_profit": 44.42127552089771
+    },
+    {
+        "growth": 65.08,
+        "code": "AZO",
+        "name": "AutoZone Inc.",
+        "price": 149727.07726199998,
+        "PE": 16.27,
+        "potential_profit": 90.16380171087785
+    },
+    {
+        "growth": 18.76,
+        "code": "CMG",
+        "name": "Chipotle Mexican Grill Inc.",
+        "price": 118654.19731199997,
+        "PE": 129.05,
+        "potential_profit": 55.90199559011996
+    },
+    {
+        "growth": 32.47,
+        "code": "MTD",
+        "name": "Mettler-Toledo International Inc.",
+        "price": 114709.260252,
+        "PE": 43.78,
+        "potential_profit": 65.93284304238435
+    },
+    {
+        "growth": 43.94,
+        "code": "TSLA",
+        "name": "Tesla",
+        "price": 76295.528496,
+        "PE": 299.31,
+        "potential_profit": 130.49361433946876
+    },
+    {
+        "growth": 21.33,
+        "code": "BLK",
+        "name": "BlackRock Inc.",
+        "price": 66283.114794,
+        "PE": 20.99,
+        "potential_profit": 45.1611940743835
+    }
+]

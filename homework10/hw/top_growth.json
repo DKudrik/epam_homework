@@ -1,0 +1,82 @@
+[
+    {
+        "growth": 167.5,
+        "code": "F",
+        "name": "Ford Motor Co.",
+        "price": 1815.7111439999999,
+        "PE": 21.51,
+        "potential_profit": 182.87981859410428
+    },
+    {
+        "growth": 154.34,
+        "code": "DVN",
+        "name": "Devon Energy Corp.",
+        "price": 3632.1652139999997,
+        "PE": -167.13,
+        "potential_profit": 208.81440099317197
+    },
+    {
+        "growth": 144.13,
+        "code": "BBWI",
+        "name": "Bath & Body Works",
+        "price": 4451.6125919999995,
+        "PE": 14.17,
+        "potential_profit": -Infinity
+    },
+    {
+        "growth": 129.75,
+        "code": "MRO",
+        "name": "Marathon Oil Corp.",
+        "price": 1355.8399499999998,
+        "PE": -5.6,
+        "potential_profit": 155.64853556485355
+    },
+    {
+        "growth": 119.75,
+        "code": "FTNT",
+        "name": "Fortinet Inc",
+        "price": 23376.909516,
+        "PE": 43.03,
+        "potential_profit": 167.24893968801663
+    },
+    {
+        "growth": 118.83,
+        "code": "NVDA",
+        "name": "NVIDIA Corp.",
+        "price": 20242.504722,
+        "PE": 51.8,
+        "potential_profit": 199.43805654015733
+    },
+    {
+        "growth": 115.2,
+        "code": "NUE",
+        "name": "Nucor Corp.",
+        "price": 8502.045144,
+        "PE": 15.99,
+        "potential_profit": 168.69002920317064
+    },
+    {
+        "growth": 109.71,
+        "code": "FANG",
+        "name": "Diamondback Energy Inc",
+        "price": 9028.036751999998,
+        "PE": 15.58,
+        "potential_profit": 130.33271719038814
+    },
+    {
+        "growth": 100.26,
+        "code": "EXR",
+        "name": "Extra Space Storage Inc.",
+        "price": 15478.863209999998,
+        "PE": 30.52,
+        "potential_profit": 112.32139543514567
+    },
+    {
+        "growth": 96.04,
+        "code": "SPG",
+        "name": "Simon Property Group Inc.",
+        "price": 11978.195897999998,
+        "PE": 23.11,
+        "potential_profit": 106.54194327097166
+    }
+]

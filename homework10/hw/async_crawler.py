@@ -134,6 +134,12 @@ async def get_company_soup(comp_data):
 
 @lru_cache
 def get_comp_name(soup):
+    """
+    Gets company's name from its personal page soup.
+
+    :param soup: company's personal page soup
+    :return: company's name
+    """
     comp_name = soup.find("span", class_="price-section__label").text.rstrip()
     return comp_name
 
@@ -184,6 +190,8 @@ async def process_general_page(PAGE_COUNT: int):
 
 def get_top_10(companies, key: str, reverse: bool) -> list[dict]:
     """
+    Returns a list with data of top 10 companies according to the selection
+    parameter(key).
 
     :param companies: dict values obj with company data
     :param key: parameter for sorting

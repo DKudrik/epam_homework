@@ -1,0 +1,82 @@
+[
+    {
+        "growth": 27.14,
+        "code": "VNO",
+        "name": "Vornado Realty Trust",
+        "price": 3400.3723019999998,
+        "PE": -893.45,
+        "potential_profit": 45.30402512132457
+    },
+    {
+        "growth": 36.15,
+        "code": "CVX",
+        "name": "Chevron Corp.",
+        "price": 9289.546704,
+        "PE": -427.45,
+        "potential_profit": 48.445075085727815
+    },
+    {
+        "growth": 154.34,
+        "code": "DVN",
+        "name": "Devon Energy Corp.",
+        "price": 3632.1652139999997,
+        "PE": -167.13,
+        "potential_profit": 208.81440099317197
+    },
+    {
+        "growth": 49.61,
+        "code": "XOM",
+        "name": "ExxonMobil Corp. (Exxon Mobil)",
+        "price": 5117.274288,
+        "PE": -125.36,
+        "potential_profit": 56.175208850756384
+    },
+    {
+        "growth": 9.94,
+        "code": "PSX",
+        "name": "Phillips 66",
+        "price": 6086.792718,
+        "PE": -76.53,
+        "potential_profit": 49.27215189873417
+    },
+    {
+        "growth": 20.32,
+        "code": "UAA",
+        "name": "Under Armour Inc.",
+        "price": 1474.70811,
+        "PE": -64.5,
+        "potential_profit": 58.97435897435898
+    },
+    {
+        "growth": -16.44,
+        "code": "INCY",
+        "name": "Incyte Corp.",
+        "price": 5437.475393999999,
+        "PE": -63.09,
+        "potential_profit": 63.899208528509135
+    },
+    {
+        "growth": -24.18,
+        "code": "TWTR",
+        "name": "Twitter",
+        "price": 2946.4445159999996,
+        "PE": -62.1,
+        "potential_profit": 108.68441457741018
+    },
+    {
+        "growth": 85.13,
+        "code": "MRNA",
+        "name": "Moderna Inc",
+        "price": 15888.215436,
+        "PE": -59.95,
+        "potential_profit": 345.9323706161988
+    },
+    {
+        "growth": 17.85,
+        "code": "UA",
+        "name": "Under Armour Inc When Issued",
+        "price": 1261.4883479999999,
+        "PE": -55.67,
+        "potential_profit": 57.14285714285713
+    }
+]
