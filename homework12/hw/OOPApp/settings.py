@@ -1,5 +1,6 @@
 import os
 
+from dotenv import find_dotenv, load_dotenv
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -15,6 +16,9 @@ INSTALLED_APPS = (
     'data',
 )
 
-SECRET_KEY = '4e&6aw+(5&cg^_!05r(&7_#dghg_pdgopq(yk)xa^bog7j)^*j'
+
+load_dotenv(find_dotenv())
+
+SECRET_KEY = os.environ['SECRET_KEY']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
